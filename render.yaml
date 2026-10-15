@@ -1,0 +1,21 @@
+# Blueprint de Render: crea el servicio del backend desde este repo.
+services:
+  - type: web
+    name: taskflow-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DB_URL
+        value: jdbc:postgresql://ep-calm-sound-b5g2ww1j.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require
+      - key: DB_USER
+        value: neondb_owner
+      - key: DB_PASSWORD
+        sync: false # se escribe en el panel de Render, no en el repo
+      - key: JWT_SECRET
+        sync: false # clave Base64 de >= 32 bytes, se escribe en el panel de Render
+      - key: CORS_ORIGINS
+        value: https://taskflow-ten-dusky.vercel.app
