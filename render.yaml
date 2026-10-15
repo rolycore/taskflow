@@ -10,7 +10,7 @@ services:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: DB_URL
-        value: jdbc:postgresql://ep-calm-sound-b5g2ww1j.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require
+        value: jdbc:postgresql://neondb_owner:npg_GqHwQnX9R3sd@ep-calm-sound-b5g2ww1j.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
       - key: DB_USER
         value: neondb_owner
       - key: DB_PASSWORD
